@@ -33,7 +33,7 @@ app.get('/app/flip/', (req, res) => {
 
 app.get('/app/flips/:number', (req, res) => {
     amt = req.params.number
-    coin_flips = coinFlip(amt)
+    coin_flips = coinFlips(amt)
     flips_counted = countFlips(coin_flips)
     res.status(200).json({"raw" : coin_flips, "summary" : flips_counted});
 
