@@ -13,10 +13,6 @@ const server = app.listen(HTTP_PORT, () => {
 });
 
 
-// Default response for any other request
-app.use(function(req, res){
-    res.status(404).send('404 NOT FOUND')
-});
 
 
 // Define Check Endpoints
@@ -28,3 +24,9 @@ app.get('/app/', (req, res) => {
         res.writeHead( res.statusCode, { 'Content-Type' : 'text/plain' });
         res.end(res.statusCode+ ' ' +res.statusMessage)
     });
+
+
+// Default response for any other request
+app.use(function(req, res){
+    res.status(404).send('404 NOT FOUND')
+});
